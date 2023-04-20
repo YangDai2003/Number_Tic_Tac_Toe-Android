@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ziffer Tic-Tac-Toe</string>
+    <string name="pvp">PvP</string>
+    <string name="pve">PvE</string>
+    <string name="welcome_to_yang_s_first_app_based_on_java">Ziffer Tic-Tac-Toe</string>
+    <string name="version">Edition 6.0</string>
+    <string name="PvP_Activity">PvP</string>
+    <string name="PvE_Activity">PvE</string>
+    <string name="ai_still_has">AI hat noch:</string>
+    <string name="you_still_have">Sie haben noch:</string>
+    <string name="player1_still_has">Spieler1 hat noch:</string>
+    <string name="player2_still_has">Spieler2 hat noch:</string>
+    <string name="restart">wiedermal</string>
+    <string name="select_number">Ziffer auswählen</string>
+    <string name="info">Info</string>
+    <string name="app_introduction">APP Vorstellung</string>
+    <string name="game_rules">Spiel Regeln</string>
+    <string name="text">Diese APP benötigt api 28 oder höher.\nEs unterstützt drei Sprachen: Chinesisch, Englisch und Deutsch und schaltet automatisch entsprechend der Sprache des Systems um. \nEs kann auch automatisch zwischen hellen und dunklen Modi wechseln, je nach Thema des Systems.\nDie Produktion der App dient ausschließlich\nLernzwecken, falls es eine Verletzung gibt,\nbitte informieren.</string>
+    <string name="text2"> Wie beim normalen Tic-Tac-Toe müssen Sie, um zu gewinnen, drei aufeinanderfolgende Felder in derselben Reihe, Spalte oder Diagonale besetzen.\nDer Unterschied besteht darin, dass die Spieler mit den Nummern 0 bis 8 kämpfen und die größere Nummer das Feld besetzen kann, auf dem sich die kleinere Nummer des Gegners befindet.\nWenn beide Seiten keine verbleibenden Zahlen haben, aber kein Gewinner entschieden wurde, wird das Spiel nicht direkt gezogen, sondern die Zahlen im Raster addieren, und die Summe ist kleiner Spieler mit wird gewinnen.\nSpieler können ein bereits besetztes Feld nicht erneut besetzen, noch können sie Zahlen verwenden, die bereits verwendet wurden.\nIn dem Spiel wählt der Spieler zuerst die zu verwendende Zahl durch \"Wählen einer Zahl\" aus und klickt dann auf das zu besetzende Feld. Klicken Sie auf \"Neustart\", um eine neue Runde zu beginnen.\nIm PvE-Modus bestimmt das Spiel zufällig den ersten Spieler.</string>
+    <string name="Info_Activity">Info</string>
+    <string name="res0">Remis!</string>
+    <string name="res1">Human gewinnt!</string>
+    <string name="res2">KI gewinnt!</string>
+    <string name="res3">Spieler1 gewinnt!</string>
+    <string name="res4">Spieler2 gewinnt!</string>
+    <string name="choose">"Bitte wählen: "</string>
+</resources>

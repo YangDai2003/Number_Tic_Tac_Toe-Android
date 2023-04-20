@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Number Tic-Tac-Toe</string>
+    <string name="pvp">PvP</string>
+    <string name="pve">PvE</string>
+    <string name="welcome_to_yang_s_first_app_based_on_java">Number Tic-Tac-Toe</string>
+    <string name="version">Version 6.0</string>
+    <string name="PvP_Activity">PvP</string>
+    <string name="PvE_Activity">PvE</string>
+    <string name="ai_still_has">AI still has:</string>
+    <string name="you_still_have">You still have:</string>
+    <string name="player1_still_has">Player1 still has:</string>
+    <string name="player2_still_has">Player2 still has:</string>
+    <string name="restart">restart</string>
+    <string name="select_number">select number</string>
+    <string name="info">Info</string>
+    <string name="app_introduction">APP Introduction</string>
+    <string name="game_rules">Game Rules</string>
+    <string name="text">This App needs api 28 or higher.\nIt supports three languages: Chinese, English and German, and will automatically switch according to the language of the system. \nIt can also automatically switch between light and dark modes according to the system theme.\nThe production of the app is entirely for\nlearning purposes, if there is any infringement,\nplease inform.</string>
+    <string name="text2">As in normal tic-tac-toe, in order to win, you must occupy three consecutive squares in the same row, column or diagonal.\nThe difference is that players will fight with numbers 0~8, and the larger number can occupy the square where the opponent\'s smaller number is located.\nWhen both sides have no remaining numbers but no winner has been decided, the game will not draw directly, but will sum the numbers in the grid, and the sum is smaller The player with will win.\nPlayers cannot reoccupy a square already occupied by themselves, nor can they use numbers that have already been used. In the game, the player first selects the number to be used by \"selecting number\", and then clicks on the square to be occupied. Click \"restart\" to start a new round. In pve mode, the game will randomly designate the first player. </string>
+    <string name="Info_Activity">Info</string>
+    <string name="res0">No one wins!</string>
+    <string name="res1">Human wins!</string>
+    <string name="res2">AI wins!</string>
+    <string name="res3">Player1 wins!</string>
+    <string name="res4">Player2 wins！</string>
+    <string name="choose">Please choose:</string>
+</resources>

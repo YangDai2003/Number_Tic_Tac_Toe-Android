@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">数字井字棋</string>
+    <string name="pvp">本地双人对战</string>
+    <string name="pve">本地人机对战</string>
+    <string name="welcome_to_yang_s_first_app_based_on_java">数字井字棋</string>
+    <string name="version">版本 6.0</string>
+    <string name="PvP_Activity">本地双人对战</string>
+    <string name="PvE_Activity">本地人机对战</string>
+    <string name="ai_still_has">AI还剩下:</string>
+    <string name="you_still_have">你还剩下:</string>
+    <string name="player1_still_has">玩家一还剩下:</string>
+    <string name="player2_still_has">玩家二还剩下:</string>
+    <string name="restart">重来</string>
+    <string name="select_number">选择数字</string>
+    <string name="info">信息</string>
+    <string name="app_introduction">应用介绍</string>
+    <string name="game_rules">游戏规则</string>
+    <string name="text">此应用需要api28及更高。\n它支持中，英，德三种语言，并会根据手机系统语言自动切换。\n它也能根据手机系统主题自动切换浅色和深色模式。\n此应用的制作纯粹为学习目的，\n如有侵权，请告知。</string>
+    <string name="text2">和普通的井字棋一样，为了获胜，你必须连续占有三个同一排，同一列或者同一对角线的格子。\n不同的是，玩家将用数字0~8对战，大的数字能占据对方更小数字所在的格子。\n当双方都没有剩余数字但并未分出胜负时，游戏不会直接平局，而是会对格子中的数字求和，总和较小的玩家将获胜。\n玩家不能重新占据已被自己占据的格子，也不能使用已经使用过的数字。\n游戏中，玩家先通过\"选择数字\"来选取要使用的数字，再点击要占据的方格。\n点击\"重来\"可以开始新的一局。pve模式中，游戏会随机指定第一个玩家.</string>
+    <string name="Info_Activity">信息</string>
+    <string name="res0">平局！</string>
+    <string name="res1">人类赢了！</string>
+    <string name="res2">AI赢了！</string>
+    <string name="res3">玩家一赢了！</string>
+    <string name="res4">玩家二赢了！</string>
+    <string name="choose">"请选择: "</string>
+</resources>
