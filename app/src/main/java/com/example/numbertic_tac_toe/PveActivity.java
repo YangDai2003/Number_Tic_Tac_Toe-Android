@@ -14,6 +14,7 @@ import com.example.numbertic_tac_toe.tictactoe.PenguAI;
 import com.example.numbertic_tac_toe.tictactoe.ai.Human;
 import com.example.numbertic_tac_toe.tictactoe.ai.SimpleAI;
 import com.google.android.material.color.DynamicColors;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.elevation.SurfaceColors;
 
 import java.util.List;
@@ -24,21 +25,15 @@ import java.util.stream.IntStream;
 
 public class PveActivity extends AppCompatActivity {
     protected Field[][] board;
-    protected boolean[] firstPlayedPieces;
-    protected boolean[] secondPlayedPieces;
-    private PenguAI first;
-    private PenguAI second;
-    private PenguAI winner;
+    protected boolean[] firstPlayedPieces, secondPlayedPieces;
+    private PenguAI first, second, winner;
     Random random = new Random();
     private final int a = random.nextInt(2);
-    private AlertDialog alertDialog;
     private String chooseNum = "";
-    private int x = 0;
-    private int y = 0;
+    private int x = 0, y = 0;
     private boolean end = false;
     private int player = 1;
-    private boolean can1 = true;
-    private boolean can2 = true;
+    private boolean can1 = true, can2 = true;
     private boolean chosen = false;
 
     public void initButtons() {
@@ -198,38 +193,33 @@ public class PveActivity extends AppCompatActivity {
     }
 
     public void showSingleOptions(View view) {
-        if (!end){
+        if (!end) {
             List<Integer> firstlist = IntStream.range(0, 9).filter(i -> !firstPlayedPieces[i]).boxed().collect(Collectors.toList());
             List<Integer> secondlist = IntStream.range(0, 9).filter(i -> !secondPlayedPieces[i]).boxed().collect(Collectors.toList());
             String[] strArray;
-            if(player == 1){
+            if (player == 1) {
                 strArray = new String[firstlist.size()];
                 for (int i = 0; i < firstlist.size(); i++)
                     strArray[i] = String.valueOf(firstlist.get(i));
-                final String[] nums = strArray;
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                alert.setTitle(getString(R.string.choose));
-                alert.setItems(nums, (dialogInterface, i) -> {
-                    chooseNum = nums[i];
-                    chosen = true;
-                    alertDialog.dismiss();
-                });
-                alertDialog = alert.create();
-            }else {
+                new MaterialAlertDialogBuilder(this)
+                        .setTitle(getString(R.string.choose))
+                        .setItems(strArray, (dialogInterface, i) -> {
+                            chooseNum = strArray[i];
+                            chosen = true;
+                        })
+                        .show();
+            } else {
                 strArray = new String[secondlist.size()];
                 for (int i = 0; i < secondlist.size(); i++)
                     strArray[i] = String.valueOf(secondlist.get(i));
-                final String[] nums = strArray;
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                alert.setTitle(getString(R.string.choose));
-                alert.setItems(nums, (dialogInterface, i) -> {
-                    chooseNum = nums[i];
-                    chosen = true;
-                    alertDialog.dismiss();
-                });
-                alertDialog = alert.create();
+                new MaterialAlertDialogBuilder(this)
+                        .setTitle(getString(R.string.choose))
+                        .setItems(strArray, (dialogInterface, i) -> {
+                            chooseNum = strArray[i];
+                            chosen = true;
+                        })
+                        .show();
             }
-            alertDialog.show();
         }
     }
 
@@ -264,9 +254,9 @@ public class PveActivity extends AppCompatActivity {
     public void getResult() {
         if (winner == null) {
             new AlertDialog.Builder(
-                PveActivity.this)
-                .setMessage(R.string.res0)
-                .show();
+                    PveActivity.this)
+                    .setMessage(R.string.res0)
+                    .show();
         } else if (winner == first && a == 0 || winner == second && a == 1) {
             new AlertDialog.Builder(
                     PveActivity.this)
@@ -367,7 +357,7 @@ public class PveActivity extends AppCompatActivity {
                     end = true;
                     return;
                 }
-            }else {
+            } else {
                 winner = second;
                 end = true;
                 return;
@@ -460,7 +450,7 @@ public class PveActivity extends AppCompatActivity {
                     end = true;
                     return;
                 }
-            }else {
+            } else {
                 winner = first;
                 end = true;
                 return;
@@ -471,12 +461,12 @@ public class PveActivity extends AppCompatActivity {
         List<Integer> secondlist = IntStream.range(0, 9).filter(i -> !secondPlayedPieces[i]).boxed().collect(Collectors.toList());
         TextView textView1 = findViewById(R.id.textView2);
         TextView textView2 = findViewById(R.id.textView6);
-        if(a == 0){
+        if (a == 0) {
             String a = secondlist.toString();
             textView1.setText(a);
             String b = firstlist.toString();
             textView2.setText(b);
-        }else {
+        } else {
             String a = firstlist.toString();
             textView1.setText(a);
             String b = secondlist.toString();

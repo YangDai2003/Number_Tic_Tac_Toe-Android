@@ -1,17 +1,21 @@
 package com.example.numbertic_tac_toe.tictactoe;
 
-  public class Field {
+public class Field {
 
-  private final int value;
-  private final boolean firstPlayer;
+    private final int value;
+    private final boolean firstPlayer;
 
-  public Field(int value, boolean firstPlayer) {
-  this.value = value;
-  this.firstPlayer = firstPlayer;
-  }
+    public Field(int value, boolean firstPlayer) {
+        this.value = value;
+        this.firstPlayer = firstPlayer;
+    }
 
-  public int value() { return value; }
+    public int value() {
+        return value;
+    }
 
-  public boolean firstPlayer() { return firstPlayer; }
+    public boolean firstPlayer() {
+        return firstPlayer;
+    }
 
-  }
+}

@@ -4,14 +4,14 @@ plugins {
 
 android {
     namespace 'com.example.numbertic_tac_toe'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId 'com.yangdai.numbertic_tac_toe'
         minSdk 28
-        targetSdk 33
-        versionCode 6
-        versionName '6.0'
+        targetSdk 34
+        versionCode 8
+        versionName '1.8'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,7 +31,7 @@ android {
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.10.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

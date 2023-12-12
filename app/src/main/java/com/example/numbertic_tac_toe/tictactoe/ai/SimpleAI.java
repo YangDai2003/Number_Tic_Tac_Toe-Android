@@ -144,7 +144,7 @@ public class SimpleAI extends PenguAI {
                     for (int j = 0; j < 3; j++) {
                         if (board[i][j] == null) defense.add(Arrays.asList(i, j));
                         if (board[i][j] != null && !board[i][j].firstPlayer()) {
-                            if (xys.contains(Arrays.asList(i, j))){
+                            if (xys.contains(Arrays.asList(i, j))) {
                                 defense.add(Arrays.asList(i, j));
                             }
                         }
@@ -168,8 +168,8 @@ public class SimpleAI extends PenguAI {
                 if (risk == 2) {
                     for (int j = 0; j < 3; j++) {
                         if (board[j][i] == null) defense.add(Arrays.asList(j, i));
-                        if (board[j][i] != null && !board[j][i].firstPlayer()){
-                            if (xys.contains(Arrays.asList(j, i))){
+                        if (board[j][i] != null && !board[j][i].firstPlayer()) {
+                            if (xys.contains(Arrays.asList(j, i))) {
                                 defense.add(Arrays.asList(j, i));
                             }
                         }
@@ -192,8 +192,8 @@ public class SimpleAI extends PenguAI {
             if (risk == 2) {
                 for (int j = 0; j < 3; j++) {
                     if (board[j][j] == null) defense.add(Arrays.asList(j, j));
-                    if (board[j][j] != null && !board[j][j].firstPlayer()){
-                        if (xys.contains(Arrays.asList(j, j))){
+                    if (board[j][j] != null && !board[j][j].firstPlayer()) {
+                        if (xys.contains(Arrays.asList(j, j))) {
                             defense.add(Arrays.asList(j, j));
                         }
                     }
@@ -203,7 +203,7 @@ public class SimpleAI extends PenguAI {
             loop1:
             for (int i = 0; i < 3; ) {
                 for (int j = 2; j >= 0; j--) {
-                    if (board[i][j] != null){
+                    if (board[i][j] != null) {
                         if (board[i][j].firstPlayer() && board[i][j].value() >= b.get(b.size() - 1)) {
                             risk = 0;
                             break loop1;
@@ -220,7 +220,7 @@ public class SimpleAI extends PenguAI {
                     for (int j = 2; j >= 0; j--) {
                         if (board[i][j] == null) defense.add(Arrays.asList(i, j));
                         if (board[i][j] != null && !board[i][j].firstPlayer()) {
-                            if (xys.contains(Arrays.asList(i, j))){
+                            if (xys.contains(Arrays.asList(i, j))) {
                                 defense.add(Arrays.asList(i, j));
                             }
                         }
@@ -243,8 +243,8 @@ public class SimpleAI extends PenguAI {
                         max.add(temp.get(0));
                         max.add(temp.get(1));
                         max.add(count);
-                    }else{
-                        if (count > max.get(2)){
+                    } else {
+                        if (count > max.get(2)) {
                             max.clear();
                             max.add(temp.get(0));
                             max.add(temp.get(1));
@@ -252,30 +252,32 @@ public class SimpleAI extends PenguAI {
                         }
                     }
                 }
-                if (board[max.get(0)][max.get(1)] != null){
-                    if(a.get(a.size() - 1) > b.get(b.size() - 1)){
+                if (board[max.get(0)][max.get(1)] != null) {
+                    if (a.get(a.size() - 1) > b.get(b.size() - 1)) {
                         for (int i = 0; i < a.size(); i++) {
-                            if (a.get(i) > board[max.get(0)][max.get(1)].value()) return new Move(max.get(0), max.get(1), a.get(i));
+                            if (a.get(i) > board[max.get(0)][max.get(1)].value())
+                                return new Move(max.get(0), max.get(1), a.get(i));
                         }
                     }
-                }else{
-                    if (a.get(a.size() - 1) > b.get(b.size() - 1)){
+                } else {
+                    if (a.get(a.size() - 1) > b.get(b.size() - 1)) {
                         for (int k = a.size() - 1; k >= 0; k--) {
-                            if (a.get(k) < b.get(b.size() -1)){
+                            if (a.get(k) < b.get(b.size() - 1)) {
                                 return new Move(max.get(0), max.get(1), a.get(k + 1));
                             }
                         }
                     }
-                    if (a.get(a.size() - 1).equals(b.get(b.size() - 1))) return new Move(max.get(0), max.get(1), a.get(a.size() - 1));
+                    if (a.get(a.size() - 1).equals(b.get(b.size() - 1)))
+                        return new Move(max.get(0), max.get(1), a.get(a.size() - 1));
                     return new Move(max.get(0), max.get(1), a.get(0));
                 }
                 for (int j = 0; j < a.size(); j++) {
-                    if (a.get(j) > board[max.get(0)][max.get(1)].value()){
+                    if (a.get(j) > board[max.get(0)][max.get(1)].value()) {
                         return new Move(max.get(0), max.get(1), a.get(j));
                     }
                 }
             }
-            if(b.size() == 1) {
+            if (b.size() == 1) {
                 for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 3; j++) {
                         if (board[i][j] == null) {
@@ -285,7 +287,7 @@ public class SimpleAI extends PenguAI {
                 }
             }
             if (xys.contains(Arrays.asList(1, 1))) {
-                if (board[1][1] != null){
+                if (board[1][1] != null) {
                     for (Integer integer : a) {
                         if (integer > board[1][1].value()) {
                             return new Move(1, 1, integer);
@@ -300,17 +302,20 @@ public class SimpleAI extends PenguAI {
                 int x = integers.get(0);
                 int y = integers.get(1);
                 if (x == 0 && y == 0) {
-                    if (board[0][1] != null && board[0][1].firstPlayer() || board[0][2] != null && board[0][2].firstPlayer()) test++;
+                    if (board[0][1] != null && board[0][1].firstPlayer() || board[0][2] != null && board[0][2].firstPlayer())
+                        test++;
                     if (board[0][1] != null && !board[0][1].firstPlayer() && board[0][1].value() > a.get(a.size() - 1)
-                    || board[0][2] != null && !board[0][2].firstPlayer() && board[0][2].value() > a.get(a.size() - 1)) {
+                            || board[0][2] != null && !board[0][2].firstPlayer() && board[0][2].value() > a.get(a.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][0] != null && board[1][0].firstPlayer() || board[2][0] != null && board[2][0].firstPlayer()) test++;
+                    if (board[1][0] != null && board[1][0].firstPlayer() || board[2][0] != null && board[2][0].firstPlayer())
+                        test++;
                     if (board[1][0] != null && !board[1][0].firstPlayer() && board[1][0].value() > a.get(a.size() - 1)
                             || board[2][0] != null && !board[2][0].firstPlayer() && board[2][0].value() > a.get(a.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][1] != null && board[1][1].firstPlayer() || board[2][2] != null && board[2][2].firstPlayer()) test++;
+                    if (board[1][1] != null && board[1][1].firstPlayer() || board[2][2] != null && board[2][2].firstPlayer())
+                        test++;
                     if (board[1][1] != null && !board[1][1].firstPlayer() && board[1][1].value() > a.get(a.size() - 1)
                             || board[2][2] != null && !board[2][2].firstPlayer() && board[2][2].value() > a.get(a.size() - 1)) {
                         test = 0;
@@ -322,17 +327,20 @@ public class SimpleAI extends PenguAI {
                     }
                     test = 0;
                 } else if (x == 0 && y == 2) {
-                    if (board[0][1] != null && board[0][1].firstPlayer() || board[0][0] != null && board[0][0].firstPlayer()) test++;
+                    if (board[0][1] != null && board[0][1].firstPlayer() || board[0][0] != null && board[0][0].firstPlayer())
+                        test++;
                     if (board[0][1] != null && !board[0][1].firstPlayer() && board[0][1].value() > a.get(a.size() - 1)
                             || board[0][0] != null && !board[0][0].firstPlayer() && board[0][0].value() > a.get(a.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][2] != null && board[1][2].firstPlayer() || board[2][2] != null && board[2][2].firstPlayer()) test++;
+                    if (board[1][2] != null && board[1][2].firstPlayer() || board[2][2] != null && board[2][2].firstPlayer())
+                        test++;
                     if (board[1][2] != null && !board[1][2].firstPlayer() && board[1][2].value() > a.get(a.size() - 1)
                             || board[2][2] != null && !board[2][2].firstPlayer() && board[2][2].value() > a.get(a.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][1] != null && board[1][1].firstPlayer() || board[2][0] != null && board[2][0].firstPlayer()) test++;
+                    if (board[1][1] != null && board[1][1].firstPlayer() || board[2][0] != null && board[2][0].firstPlayer())
+                        test++;
                     if (board[1][1] != null && !board[1][1].firstPlayer() && board[1][1].value() > a.get(a.size() - 1)
                             || board[2][0] != null && !board[2][0].firstPlayer() && board[2][0].value() > a.get(a.size() - 1)) {
                         test = 0;
@@ -343,18 +351,21 @@ public class SimpleAI extends PenguAI {
                         test2.add(2);
                     }
                     test = 0;
-                }else if (x == 2 && y == 2) {
-                    if (board[0][2] != null && board[0][2].firstPlayer() || board[1][2] != null && board[1][2].firstPlayer()) test++;
+                } else if (x == 2 && y == 2) {
+                    if (board[0][2] != null && board[0][2].firstPlayer() || board[1][2] != null && board[1][2].firstPlayer())
+                        test++;
                     if (board[0][2] != null && !board[0][2].firstPlayer() && board[0][2].value() > a.get(a.size() - 1)
                             || board[1][2] != null && !board[1][2].firstPlayer() && board[1][2].value() > a.get(a.size() - 1)) {
                         test = 0;
                     }
-                    if (board[2][1] != null && board[2][1].firstPlayer() || board[2][0] != null && board[2][0].firstPlayer()) test++;
+                    if (board[2][1] != null && board[2][1].firstPlayer() || board[2][0] != null && board[2][0].firstPlayer())
+                        test++;
                     if (board[2][1] != null && !board[2][1].firstPlayer() && board[2][1].value() > a.get(a.size() - 1)
                             || board[2][0] != null && !board[2][0].firstPlayer() && board[2][0].value() > a.get(a.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][1] != null && board[1][1].firstPlayer() || board[0][0] != null && board[0][0].firstPlayer()) test++;
+                    if (board[1][1] != null && board[1][1].firstPlayer() || board[0][0] != null && board[0][0].firstPlayer())
+                        test++;
                     if (board[1][1] != null && !board[1][1].firstPlayer() && board[1][1].value() > a.get(a.size() - 1)
                             || board[0][0] != null && !board[0][0].firstPlayer() && board[0][0].value() > a.get(a.size() - 1)) {
                         test = 0;
@@ -366,17 +377,20 @@ public class SimpleAI extends PenguAI {
                     }
                     test = 0;
                 } else if (x == 2 && y == 0) {
-                    if (board[2][1] != null && board[2][1].firstPlayer() || board[2][2] != null && board[2][2].firstPlayer()) test++;
+                    if (board[2][1] != null && board[2][1].firstPlayer() || board[2][2] != null && board[2][2].firstPlayer())
+                        test++;
                     if (board[2][1] != null && !board[2][1].firstPlayer() && board[2][1].value() > a.get(a.size() - 1)
                             || board[2][2] != null && !board[2][2].firstPlayer() && board[2][2].value() > a.get(a.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][0] != null && board[1][0].firstPlayer() || board[0][0] != null && board[0][0].firstPlayer()) test++;
+                    if (board[1][0] != null && board[1][0].firstPlayer() || board[0][0] != null && board[0][0].firstPlayer())
+                        test++;
                     if (board[1][0] != null && !board[1][0].firstPlayer() && board[1][0].value() > a.get(a.size() - 1)
                             || board[0][0] != null && !board[0][0].firstPlayer() && board[0][0].value() > a.get(a.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][1] != null && board[1][1].firstPlayer() || board[0][2] != null && board[0][2].firstPlayer()) test++;
+                    if (board[1][1] != null && board[1][1].firstPlayer() || board[0][2] != null && board[0][2].firstPlayer())
+                        test++;
                     if (board[1][1] != null && !board[1][1].firstPlayer() && board[1][1].value() > a.get(a.size() - 1)
                             || board[0][2] != null && !board[0][2].firstPlayer() && board[0][2].value() > a.get(a.size() - 1)) {
                         test = 0;
@@ -389,23 +403,26 @@ public class SimpleAI extends PenguAI {
                     test = 0;
                 }
             }
-            if (!test2.isEmpty()){
+            if (!test2.isEmpty()) {
                 if (board[test2.get(0)][test2.get(1)] != null) {
-                    if(a.get(a.size() - 1) > b.get(b.size() - 1)){
+                    if (a.get(a.size() - 1) > b.get(b.size() - 1)) {
                         for (int i = 0; i < a.size(); i++) {
-                            if (a.get(i) > board[test2.get(0)][test2.get(1)].value()) return new Move(test2.get(0), test2.get(1), a.get(i));
+                            if (a.get(i) > board[test2.get(0)][test2.get(1)].value())
+                                return new Move(test2.get(0), test2.get(1), a.get(i));
                         }
                     }
-                    if (a.get(a.size() - 1).equals(b.get(b.size() - 1))) return new Move(test2.get(0), test2.get(1), a.get(a.size() - 1));
-                }else{
-                    if (a.get(a.size() - 1) > b.get(b.size() - 1)){
+                    if (a.get(a.size() - 1).equals(b.get(b.size() - 1)))
+                        return new Move(test2.get(0), test2.get(1), a.get(a.size() - 1));
+                } else {
+                    if (a.get(a.size() - 1) > b.get(b.size() - 1)) {
                         return new Move(test2.get(0), test2.get(1), a.get(0));
                     }
-                    if (a.get(a.size() - 1).equals(b.get(b.size() - 1))) return new Move(test2.get(0), test2.get(1), a.get(a.size() - 1));
+                    if (a.get(a.size() - 1).equals(b.get(b.size() - 1)))
+                        return new Move(test2.get(0), test2.get(1), a.get(a.size() - 1));
                     return new Move(test2.get(0), test2.get(1), a.get(0));
                 }
                 for (int j = 0; j < a.size(); j++) {
-                    if (a.get(j) > board[test2.get(0)][test2.get(1)].value()){
+                    if (a.get(j) > board[test2.get(0)][test2.get(1)].value()) {
                         return new Move(test2.get(0), test2.get(1), a.get(j));
                     }
                 }
@@ -426,7 +443,7 @@ public class SimpleAI extends PenguAI {
                         }
                     }
                 }
-            }else if (xys.contains(Arrays.asList(2, 2))) {
+            } else if (xys.contains(Arrays.asList(2, 2))) {
                 if (board[2][2] != null) {
                     for (int i = 0; i < a.get(0); i++) {
                         if (a.get(i) > board[2][2].value()) {
@@ -434,7 +451,7 @@ public class SimpleAI extends PenguAI {
                         }
                     }
                 }
-            }else if (xys.contains(Arrays.asList(2, 0))) {
+            } else if (xys.contains(Arrays.asList(2, 0))) {
                 if (board[2][0] != null) {
                     for (int i = 0; i < a.get(0); i++) {
                         if (a.get(i) > board[2][0].value()) {
@@ -451,11 +468,11 @@ public class SimpleAI extends PenguAI {
                 if (board[0][2] == null) {
                     return new Move(0, 2, a.get(0));
                 }
-            }else if (xys.contains(Arrays.asList(2, 2))) {
+            } else if (xys.contains(Arrays.asList(2, 2))) {
                 if (board[2][2] == null) {
                     return new Move(2, 2, a.get(0));
                 }
-            }else if (xys.contains(Arrays.asList(2, 0))) {
+            } else if (xys.contains(Arrays.asList(2, 0))) {
                 if (board[2][0] == null) {
                     return new Move(2, 0, a.get(0));
                 }
@@ -573,7 +590,7 @@ public class SimpleAI extends PenguAI {
                 return new Move(attack.get(0), attack.get(1), b.get(b.size() - 1));
             }
 //
-            if (a.size() != 0){
+            if (a.size() != 0) {
                 for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 3; j++) {
                         if (board[i][j] != null) {
@@ -590,7 +607,7 @@ public class SimpleAI extends PenguAI {
                         for (int j = 0; j < 3; j++) {
                             if (board[i][j] == null) defense.add(Arrays.asList(i, j));
                             if (board[i][j] != null && board[i][j].firstPlayer()) {
-                                if (xys.contains(Arrays.asList(i, j))){
+                                if (xys.contains(Arrays.asList(i, j))) {
                                     defense.add(Arrays.asList(i, j));
                                 }
                             }
@@ -614,8 +631,8 @@ public class SimpleAI extends PenguAI {
                     if (risk == 2) {
                         for (int j = 0; j < 3; j++) {
                             if (board[j][i] == null) defense.add(Arrays.asList(j, i));
-                            if (board[j][i] != null && board[j][i].firstPlayer()){
-                                if (xys.contains(Arrays.asList(j, i))){
+                            if (board[j][i] != null && board[j][i].firstPlayer()) {
+                                if (xys.contains(Arrays.asList(j, i))) {
                                     defense.add(Arrays.asList(j, i));
                                 }
                             }
@@ -638,8 +655,8 @@ public class SimpleAI extends PenguAI {
                 if (risk == 2) {
                     for (int j = 0; j < 3; j++) {
                         if (board[j][j] == null) defense.add(Arrays.asList(j, j));
-                        if (board[j][j] != null && board[j][j].firstPlayer()){
-                            if (xys.contains(Arrays.asList(j, j))){
+                        if (board[j][j] != null && board[j][j].firstPlayer()) {
+                            if (xys.contains(Arrays.asList(j, j))) {
                                 defense.add(Arrays.asList(j, j));
                             }
                         }
@@ -649,7 +666,7 @@ public class SimpleAI extends PenguAI {
                 loop1:
                 for (int i = 0; i < 3; ) {
                     for (int j = 2; j >= 0; j--) {
-                        if (board[i][j] != null){
+                        if (board[i][j] != null) {
                             if (!board[i][j].firstPlayer() && board[i][j].value() >= a.get(a.size() - 1)) {
                                 risk = 0;
                                 break loop1;
@@ -666,7 +683,7 @@ public class SimpleAI extends PenguAI {
                         for (int j = 2; j >= 0; j--) {
                             if (board[i][j] == null) defense.add(Arrays.asList(i, j));
                             if (board[i][j] != null && board[i][j].firstPlayer()) {
-                                if (xys.contains(Arrays.asList(i, j))){
+                                if (xys.contains(Arrays.asList(i, j))) {
                                     defense.add(Arrays.asList(i, j));
                                 }
                             }
@@ -689,8 +706,8 @@ public class SimpleAI extends PenguAI {
                             max.add(temp.get(0));
                             max.add(temp.get(1));
                             max.add(count);
-                        }else{
-                            if (count > max.get(2)){
+                        } else {
+                            if (count > max.get(2)) {
                                 max.clear();
                                 max.add(temp.get(0));
                                 max.add(temp.get(1));
@@ -698,31 +715,33 @@ public class SimpleAI extends PenguAI {
                             }
                         }
                     }
-                    if (board[max.get(0)][max.get(1)] != null){
-                        if(b.get(b.size() - 1) > a.get(a.size() - 1)){
+                    if (board[max.get(0)][max.get(1)] != null) {
+                        if (b.get(b.size() - 1) > a.get(a.size() - 1)) {
                             for (int i = 0; i < b.size(); i++) {
-                                if (b.get(i) > board[max.get(0)][max.get(1)].value()) return new Move(max.get(0), max.get(1), b.get(i));
+                                if (b.get(i) > board[max.get(0)][max.get(1)].value())
+                                    return new Move(max.get(0), max.get(1), b.get(i));
                             }
                         }
-                    }else{
-                        if (b.get(b.size() - 1) > a.get(a.size() - 1)){
+                    } else {
+                        if (b.get(b.size() - 1) > a.get(a.size() - 1)) {
                             for (int k = b.size() - 1; k >= 0; k--) {
-                                if (b.get(k) < a.get(a.size() -1)){
+                                if (b.get(k) < a.get(a.size() - 1)) {
                                     return new Move(max.get(0), max.get(1), b.get(k + 1));
                                 }
                             }
                         }
-                        if (a.get(a.size() - 1).equals(b.get(b.size() - 1))) return new Move(max.get(0), max.get(1), b.get(b.size() - 1));
+                        if (a.get(a.size() - 1).equals(b.get(b.size() - 1)))
+                            return new Move(max.get(0), max.get(1), b.get(b.size() - 1));
                         return new Move(max.get(0), max.get(1), b.get(0));
                     }
                     for (int j = 0; j < b.size(); j++) {
-                        if (b.get(j) > board[max.get(0)][max.get(1)].value()){
+                        if (b.get(j) > board[max.get(0)][max.get(1)].value()) {
                             return new Move(max.get(0), max.get(1), b.get(j));
                         }
                     }
                 }
             }
-            if(a.size() == 0 || a.size() == 1) {
+            if (a.size() == 0 || a.size() == 1) {
                 for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 3; j++) {
                         if (board[i][j] == null) {
@@ -732,7 +751,7 @@ public class SimpleAI extends PenguAI {
                 }
             }
             if (xys.contains(Arrays.asList(1, 1))) {
-                if (board[1][1] != null){
+                if (board[1][1] != null) {
                     for (Integer integer : b) {
                         if (integer > board[1][1].value()) {
                             return new Move(1, 1, integer);
@@ -747,17 +766,20 @@ public class SimpleAI extends PenguAI {
                 int x = integers.get(0);
                 int y = integers.get(1);
                 if (x == 0 && y == 0) {
-                    if (board[0][1] != null && !board[0][1].firstPlayer() || board[0][2] != null && !board[0][2].firstPlayer()) test++;
+                    if (board[0][1] != null && !board[0][1].firstPlayer() || board[0][2] != null && !board[0][2].firstPlayer())
+                        test++;
                     if (board[0][1] != null && board[0][1].firstPlayer() && board[0][1].value() > b.get(b.size() - 1)
                             || board[0][2] != null && board[0][2].firstPlayer() && board[0][2].value() > b.get(b.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][0] != null && !board[1][0].firstPlayer() || board[2][0] != null && !board[2][0].firstPlayer()) test++;
+                    if (board[1][0] != null && !board[1][0].firstPlayer() || board[2][0] != null && !board[2][0].firstPlayer())
+                        test++;
                     if (board[1][0] != null && board[1][0].firstPlayer() && board[1][0].value() > b.get(b.size() - 1)
                             || board[2][0] != null && board[2][0].firstPlayer() && board[2][0].value() > b.get(b.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][1] != null && !board[1][1].firstPlayer() || board[2][2] != null && !board[2][2].firstPlayer()) test++;
+                    if (board[1][1] != null && !board[1][1].firstPlayer() || board[2][2] != null && !board[2][2].firstPlayer())
+                        test++;
                     if (board[1][1] != null && board[1][1].firstPlayer() && board[1][1].value() > b.get(b.size() - 1)
                             || board[2][2] != null && board[2][2].firstPlayer() && board[2][2].value() > b.get(b.size() - 1)) {
                         test = 0;
@@ -769,17 +791,20 @@ public class SimpleAI extends PenguAI {
                     }
                     test = 0;
                 } else if (x == 0 && y == 2) {
-                    if (board[0][1] != null && !board[0][1].firstPlayer() || board[0][0] != null && !board[0][0].firstPlayer()) test++;
+                    if (board[0][1] != null && !board[0][1].firstPlayer() || board[0][0] != null && !board[0][0].firstPlayer())
+                        test++;
                     if (board[0][1] != null && board[0][1].firstPlayer() && board[0][1].value() > b.get(b.size() - 1)
                             || board[0][0] != null && board[0][0].firstPlayer() && board[0][0].value() > b.get(b.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][2] != null && !board[1][2].firstPlayer() || board[2][2] != null && !board[2][2].firstPlayer()) test++;
+                    if (board[1][2] != null && !board[1][2].firstPlayer() || board[2][2] != null && !board[2][2].firstPlayer())
+                        test++;
                     if (board[1][2] != null && board[1][2].firstPlayer() && board[1][2].value() > b.get(b.size() - 1)
                             || board[2][2] != null && board[2][2].firstPlayer() && board[2][2].value() > b.get(b.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][1] != null && !board[1][1].firstPlayer() || board[2][0] != null && !board[2][0].firstPlayer()) test++;
+                    if (board[1][1] != null && !board[1][1].firstPlayer() || board[2][0] != null && !board[2][0].firstPlayer())
+                        test++;
                     if (board[1][1] != null && board[1][1].firstPlayer() && board[1][1].value() > b.get(b.size() - 1)
                             || board[2][0] != null && board[2][0].firstPlayer() && board[2][0].value() > b.get(b.size() - 1)) {
                         test = 0;
@@ -790,18 +815,21 @@ public class SimpleAI extends PenguAI {
                         test2.add(2);
                     }
                     test = 0;
-                }else if (x == 2 && y == 2) {
-                    if (board[0][2] != null && !board[0][2].firstPlayer() || board[1][2] != null && !board[1][2].firstPlayer()) test++;
+                } else if (x == 2 && y == 2) {
+                    if (board[0][2] != null && !board[0][2].firstPlayer() || board[1][2] != null && !board[1][2].firstPlayer())
+                        test++;
                     if (board[0][2] != null && board[0][2].firstPlayer() && board[0][2].value() > b.get(b.size() - 1)
                             || board[1][2] != null && board[1][2].firstPlayer() && board[1][2].value() > b.get(b.size() - 1)) {
                         test = 0;
                     }
-                    if (board[2][1] != null && !board[2][1].firstPlayer() || board[2][0] != null && !board[2][0].firstPlayer()) test++;
+                    if (board[2][1] != null && !board[2][1].firstPlayer() || board[2][0] != null && !board[2][0].firstPlayer())
+                        test++;
                     if (board[2][1] != null && board[2][1].firstPlayer() && board[2][1].value() > b.get(b.size() - 1)
                             || board[2][0] != null && board[2][0].firstPlayer() && board[2][0].value() > b.get(b.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][1] != null && !board[1][1].firstPlayer() || board[0][0] != null && !board[0][0].firstPlayer()) test++;
+                    if (board[1][1] != null && !board[1][1].firstPlayer() || board[0][0] != null && !board[0][0].firstPlayer())
+                        test++;
                     if (board[1][1] != null && board[1][1].firstPlayer() && board[1][1].value() > b.get(b.size() - 1)
                             || board[0][0] != null && board[0][0].firstPlayer() && board[0][0].value() > b.get(b.size() - 1)) {
                         test = 0;
@@ -813,17 +841,20 @@ public class SimpleAI extends PenguAI {
                     }
                     test = 0;
                 } else if (x == 2 && y == 0) {
-                    if (board[2][1] != null && !board[2][1].firstPlayer() || board[2][2] != null && !board[2][2].firstPlayer()) test++;
+                    if (board[2][1] != null && !board[2][1].firstPlayer() || board[2][2] != null && !board[2][2].firstPlayer())
+                        test++;
                     if (board[2][1] != null && board[2][1].firstPlayer() && board[2][1].value() > b.get(b.size() - 1)
                             || board[2][2] != null && board[2][2].firstPlayer() && board[2][2].value() > b.get(b.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][0] != null && !board[1][0].firstPlayer() || board[0][0] != null && !board[0][0].firstPlayer()) test++;
+                    if (board[1][0] != null && !board[1][0].firstPlayer() || board[0][0] != null && !board[0][0].firstPlayer())
+                        test++;
                     if (board[1][0] != null && board[1][0].firstPlayer() && board[1][0].value() > b.get(b.size() - 1)
                             || board[0][0] != null && board[0][0].firstPlayer() && board[0][0].value() > b.get(b.size() - 1)) {
                         test = 0;
                     }
-                    if (board[1][1] != null && !board[1][1].firstPlayer() || board[0][2] != null && !board[0][2].firstPlayer()) test++;
+                    if (board[1][1] != null && !board[1][1].firstPlayer() || board[0][2] != null && !board[0][2].firstPlayer())
+                        test++;
                     if (board[1][1] != null && board[1][1].firstPlayer() && board[1][1].value() > b.get(b.size() - 1)
                             || board[0][2] != null && board[0][2].firstPlayer() && board[0][2].value() > b.get(b.size() - 1)) {
                         test = 0;
@@ -836,25 +867,28 @@ public class SimpleAI extends PenguAI {
                     test = 0;
                 }
             }
-            if (!test2.isEmpty()){
-                if (a.size() != 0){
+            if (!test2.isEmpty()) {
+                if (a.size() != 0) {
                     if (board[test2.get(0)][test2.get(1)] != null) {
-                        if(b.get(b.size() - 1) > a.get(a.size() - 1)){
+                        if (b.get(b.size() - 1) > a.get(a.size() - 1)) {
                             for (int i = 0; i < b.size(); i++) {
-                                if (b.get(i) > board[test2.get(0)][test2.get(1)].value()) return new Move(test2.get(0), test2.get(1), b.get(i));
+                                if (b.get(i) > board[test2.get(0)][test2.get(1)].value())
+                                    return new Move(test2.get(0), test2.get(1), b.get(i));
                             }
                         }
-                        if (b.get(b.size() - 1).equals(a.get(a.size() - 1))) return new Move(test2.get(0), test2.get(1), b.get(b.size() - 1));
-                    }else{
-                        if (b.get(b.size() - 1) > a.get(a.size() - 1)){
+                        if (b.get(b.size() - 1).equals(a.get(a.size() - 1)))
+                            return new Move(test2.get(0), test2.get(1), b.get(b.size() - 1));
+                    } else {
+                        if (b.get(b.size() - 1) > a.get(a.size() - 1)) {
                             return new Move(test2.get(0), test2.get(1), b.get(0));
                         }
-                        if (b.get(b.size() - 1).equals(a.get(a.size() - 1))) return new Move(test2.get(0), test2.get(1), b.get(b.size() - 1));
+                        if (b.get(b.size() - 1).equals(a.get(a.size() - 1)))
+                            return new Move(test2.get(0), test2.get(1), b.get(b.size() - 1));
                         return new Move(test2.get(0), test2.get(1), b.get(0));
                     }
                 }
                 for (int j = 0; j < b.size(); j++) {
-                    if (b.get(j) > board[test2.get(0)][test2.get(1)].value()){
+                    if (b.get(j) > board[test2.get(0)][test2.get(1)].value()) {
                         return new Move(test2.get(0), test2.get(1), b.get(j));
                     }
                 }
@@ -876,7 +910,7 @@ public class SimpleAI extends PenguAI {
                         }
                     }
                 }
-            }else if (xys.contains(Arrays.asList(2, 2))) {
+            } else if (xys.contains(Arrays.asList(2, 2))) {
                 if (board[2][2] != null) {
                     for (int i = 0; i < b.get(0); i++) {
                         if (b.get(i) > board[2][2].value()) {
@@ -884,7 +918,7 @@ public class SimpleAI extends PenguAI {
                         }
                     }
                 }
-            }else if (xys.contains(Arrays.asList(2, 0))) {
+            } else if (xys.contains(Arrays.asList(2, 0))) {
                 if (board[2][0] != null) {
                     for (int i = 0; i < b.get(0); i++) {
                         if (b.get(i) > board[2][0].value()) {
@@ -901,11 +935,11 @@ public class SimpleAI extends PenguAI {
                 if (board[0][2] == null) {
                     return new Move(0, 2, b.get(0));
                 }
-            }else if (xys.contains(Arrays.asList(2, 2))) {
+            } else if (xys.contains(Arrays.asList(2, 2))) {
                 if (board[2][2] == null) {
                     return new Move(2, 2, b.get(0));
                 }
-            }else if (xys.contains(Arrays.asList(2, 0))) {
+            } else if (xys.contains(Arrays.asList(2, 0))) {
                 if (board[2][0] == null) {
                     return new Move(2, 0, b.get(0));
                 }

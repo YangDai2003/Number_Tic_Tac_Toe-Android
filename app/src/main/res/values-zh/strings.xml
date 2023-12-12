@@ -4,7 +4,7 @@
     <string name="pvp">本地双人对战</string>
     <string name="pve">本地人机对战</string>
     <string name="welcome_to_yang_s_first_app_based_on_java">数字井字棋</string>
-    <string name="version">版本 6.0</string>
+    <string name="version">版本 7.0</string>
     <string name="PvP_Activity">本地双人对战</string>
     <string name="PvE_Activity">本地人机对战</string>
     <string name="ai_still_has">AI还剩下:</string>
